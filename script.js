@@ -62,16 +62,27 @@
 // =================== 03 The Event Object =================== //
 
 const logo = document.querySelector('img');
+const link = document.querySelector('.outer-link');
+
+link.addEventListener('click', (e) => {
+	e.preventDefault();
+});
 
 const onClick = (e) => {
-	console.log(e.target);
-	console.log(e.currentTarget);
-	e.target.style.backgroundColor = 'black';
+	// console.log(e.target);
+	// console.log(e.currentTarget);
+	// e.target.style.backgroundColor = 'black';
+	// console.log(e.type);
+	// console.log(e.timeStamp);
+	// console.log(e.clientX, e.clientY);
+	// console.log(e.offsetX, e.offsetY);
+	// console.log(e.pageX, e.pageY);
+	console.log(e.screenX, e.screenY);
 };
 
 logo.addEventListener('click', onClick);
 
-document.body.addEventListener('click', function (e) {
-	console.log(e.target);
-	console.log(e.currentTarget);
-});
+// document.body.addEventListener('click', function (e) {
+// 	console.log(e.target);
+// 	console.log(e.currentTarget);
+// });

@@ -63,9 +63,17 @@
 
 const logo = document.querySelector('img');
 const link = document.querySelector('.outer-link');
+const heading = document.querySelector('#app-title');
+
+const onDrag = (e) => {
+	heading.innerText = `X ${e.clientX} Y ${e.clientY}`;
+};
+
+logo.addEventListener('drag', onDrag);
 
 link.addEventListener('click', (e) => {
 	e.preventDefault();
+	console.log('Action stopped');
 });
 
 const onClick = (e) => {

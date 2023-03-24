@@ -119,6 +119,14 @@ const onKeyDown = (e) => {
 	if (e.repeat) {
 		console.log(`You are holding down ${e.key} key.`);
 	}
+
+	// console.log('Shift ' + e.shiftKey);
+	// console.log('Control ' + e.ctrlKey);
+	// console.log('Alt ' + e.altKey);
+
+	if (e.shiftKey && e.key === 'K') {
+		console.log(`You pressed shift + ${e.key} key`);
+	}
 };
 
 // itemInput.addEventListener('keypress', onKeyPress);

@@ -61,36 +61,66 @@
 
 // =================== 03 The Event Object =================== //
 
-const logo = document.querySelector('img');
-const link = document.querySelector('.outer-link');
-const heading = document.querySelector('#app-title');
+// const logo = document.querySelector('img');
+// const link = document.querySelector('.outer-link');
+// const heading = document.querySelector('#app-title');
 
-const onDrag = (e) => {
-	heading.innerText = `X ${e.clientX} Y ${e.clientY}`;
-};
+// const onDrag = (e) => {
+// 	heading.innerText = `X ${e.clientX} Y ${e.clientY}`;
+// };
 
-logo.addEventListener('drag', onDrag);
+// logo.addEventListener('drag', onDrag);
 
-link.addEventListener('click', (e) => {
-	e.preventDefault();
-	console.log('Action stopped');
-});
+// link.addEventListener('click', (e) => {
+// 	e.preventDefault();
+// 	console.log('Action stopped');
+// });
 
-const onClick = (e) => {
-	// console.log(e.target);
-	// console.log(e.currentTarget);
-	// e.target.style.backgroundColor = 'black';
-	// console.log(e.type);
-	// console.log(e.timeStamp);
-	// console.log(e.clientX, e.clientY);
-	// console.log(e.offsetX, e.offsetY);
-	// console.log(e.pageX, e.pageY);
-	console.log(e.screenX, e.screenY);
-};
+// const onClick = (e) => {
+// 	// console.log(e.target);
+// 	// console.log(e.currentTarget);
+// 	// e.target.style.backgroundColor = 'black';
+// 	// console.log(e.type);
+// 	// console.log(e.timeStamp);
+// 	// console.log(e.clientX, e.clientY);
+// 	// console.log(e.offsetX, e.offsetY);
+// 	// console.log(e.pageX, e.pageY);
+// 	console.log(e.screenX, e.screenY);
+// };
 
-logo.addEventListener('click', onClick);
+// logo.addEventListener('click', onClick);
 
 // document.body.addEventListener('click', function (e) {
 // 	console.log(e.target);
 // 	console.log(e.currentTarget);
 // });
+
+// =========== 04 Keyboard Events & Key Properties ============ //
+
+const itemInput = document.querySelector('#item-input');
+
+// const onKeyPress = (e) => console.log('keypress');
+// const onKeyUp = (e) => console.log('keyup');
+const onKeyDown = (e) => {
+	e.preventDefault();
+	// // key
+	// if (e.key === 'Enter') {
+	// 	alert('You Clicked Enter');
+	// }
+	// keyCode
+	if (e.keyCode === 13) {
+		alert('You pressed Enter');
+	}
+	//code
+	if (e.code === 'Digit1') {
+		console.log('You pressed number 1');
+	}
+
+	if (e.repeat) {
+		console.log(`You are holding down ${e.key} key.`);
+	}
+};
+
+// itemInput.addEventListener('keypress', onKeyPress);
+// itemInput.addEventListener('keyup', onKeyUp);
+itemInput.addEventListener('keydown', onKeyDown);

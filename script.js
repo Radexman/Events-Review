@@ -95,40 +95,44 @@
 // 	console.log(e.currentTarget);
 // });
 
-// =========== 04 Keyboard Events & Key Properties ============ //
+// // =========== 04 Keyboard Events & Key Properties ============ //
 
-const itemInput = document.querySelector('#item-input');
+// const itemInput = document.querySelector('#item-input');
 
-// const onKeyPress = (e) => console.log('keypress');
-// const onKeyUp = (e) => console.log('keyup');
-const onKeyDown = (e) => {
-	e.preventDefault();
-	// // key
-	// if (e.key === 'Enter') {
-	// 	alert('You Clicked Enter');
-	// }
-	// keyCode
-	if (e.keyCode === 13) {
-		alert('You pressed Enter');
-	}
-	//code
-	if (e.code === 'Digit1') {
-		console.log('You pressed number 1');
-	}
+// // const onKeyPress = (e) => console.log('keypress');
+// // const onKeyUp = (e) => console.log('keyup');
+// const onKeyDown = (e) => {
+// 	e.preventDefault();
+// 	// // key
+// 	// if (e.key === 'Enter') {
+// 	// 	alert('You Clicked Enter');
+// 	// }
+// 	// keyCode
+// 	if (e.keyCode === 13) {
+// 		alert('You pressed Enter');
+// 	}
+// 	//code
+// 	if (e.code === 'Digit1') {
+// 		console.log('You pressed number 1');
+// 	}
 
-	if (e.repeat) {
-		console.log(`You are holding down ${e.key} key.`);
-	}
+// 	if (e.repeat) {
+// 		console.log(`You are holding down ${e.key} key.`);
+// 	}
 
-	// console.log('Shift ' + e.shiftKey);
-	// console.log('Control ' + e.ctrlKey);
-	// console.log('Alt ' + e.altKey);
+// 	// console.log('Shift ' + e.shiftKey);
+// 	// console.log('Control ' + e.ctrlKey);
+// 	// console.log('Alt ' + e.altKey);
 
-	if (e.shiftKey && e.key === 'K') {
-		console.log(`You pressed shift + ${e.key} key`);
-	}
-};
+// 	if (e.shiftKey && e.key === 'K') {
+// 		console.log(`You pressed shift + ${e.key} key`);
+// 	}
+// };
 
-// itemInput.addEventListener('keypress', onKeyPress);
-// itemInput.addEventListener('keyup', onKeyUp);
-itemInput.addEventListener('keydown', onKeyDown);
+// // itemInput.addEventListener('keypress', onKeyPress);
+// // itemInput.addEventListener('keyup', onKeyUp);
+// itemInput.addEventListener('keydown', onKeyDown);
+
+// ================ 05 KeyCode Mini-Project ================= //
+
+window.addEventListener('keydown', (e) => {});

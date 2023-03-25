@@ -193,23 +193,40 @@
 
 // ================== 07 Event Bubbling  =================== //
 
-const button = document.querySelector('form button');
-const div = document.querySelector('form div:nth-child(2)');
-const form = document.querySelector('form');
+// const button = document.querySelector('form button');
+// const div = document.querySelector('form div:nth-child(2)');
+// const form = document.querySelector('form');
 
-button.addEventListener('click', (e) => {
-	e.stopPropagation();
-	alert('The button was clicked');
-});
+// button.addEventListener('click', (e) => {
+// 	e.stopPropagation();
+// 	alert('The button was clicked');
+// });
 
-div.addEventListener('click', () => {
-	alert('Div was clicked');
-});
+// div.addEventListener('click', () => {
+// 	alert('Div was clicked');
+// });
 
-form.addEventListener('click', () => {
-	alert('Form was clicked');
-});
+// form.addEventListener('click', () => {
+// 	alert('Form was clicked');
+// });
 
-document.body.addEventListener('click', () => {
-	alert('Body was clicked');
+// document.body.addEventListener('click', () => {
+// 	alert('Body was clicked');
+// });
+
+// ========= 08 Event Delegation & Multiple Events =========== //
+
+const items = document.querySelectorAll('.item');
+const list = document.querySelector('ul');
+
+const removeItem = (e) => {
+	e.target.remove();
+};
+
+// items.forEach((item) => {
+// 	item.addEventListener('click', removeItem);
+// });
+
+list.addEventListener('click', (e) => {
+	e.target.className === 'item' ? e.target.remove() : null;
 });

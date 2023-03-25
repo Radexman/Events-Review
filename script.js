@@ -216,17 +216,48 @@
 
 // ========= 08 Event Delegation & Multiple Events =========== //
 
-const items = document.querySelectorAll('.item');
-const list = document.querySelector('ul');
+// const items = document.querySelectorAll('.item');
+// const list = document.querySelector('ul');
 
-const removeItem = (e) => {
-	e.target.remove();
-};
+// const removeItem = (e) => {
+// 	e.target.remove();
+// };
 
-// items.forEach((item) => {
-// 	item.addEventListener('click', removeItem);
+// // items.forEach((item) => {
+// // 	item.addEventListener('click', removeItem);
+// // });
+
+// list.addEventListener('click', (e) => {
+// 	e.target.className === 'item' ? e.target.remove() : null;
 // });
 
-list.addEventListener('click', (e) => {
-	e.target.className === 'item' ? e.target.remove() : null;
+// ============ 09 Page Loading & Window Events ============== //
+
+// window.onload = function () {
+// 	document.querySelector('h1').innerText = 'Hello World';
+// };
+
+// window.addEventListener('load', () => {
+// 	document.querySelector('h1').innerText = 'Hello World';
+// });
+
+// window.addEventListener('load', () => {
+// 	console.log('Page loaded');
+// });
+
+// window.addEventListener('DOMContentLoaded', () => {
+// 	console.log('DOM loaded');
+// });
+
+// console.log('Run me');
+
+window.addEventListener('resize', () => {
+	document.querySelector('h1').innerText = `X ${window.innerHeight} Y ${window.innerWidth}`;
+});
+
+window.addEventListener('scroll', () => {
+	console.log(`Scroll ${window.scrollX} x ${window.scrollY} y`);
+	if (window.scrollY > 10) {
+		document.body.style.backgroundColor = '333';
+	}
 });

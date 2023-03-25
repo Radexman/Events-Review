@@ -95,7 +95,7 @@
 // 	console.log(e.currentTarget);
 // });
 
-// // =========== 04 Keyboard Events & Key Properties ============ //
+// ========== 04 Keyboard Events & Key Properties =========== //
 
 // const itemInput = document.querySelector('#item-input');
 
@@ -133,6 +133,31 @@
 // // itemInput.addEventListener('keyup', onKeyUp);
 // itemInput.addEventListener('keydown', onKeyDown);
 
-// ================ 05 KeyCode Mini-Project ================= //
+// ==================== 05 Input Events ===================== //
 
-window.addEventListener('keydown', (e) => {});
+const itemInput = document.querySelector('#item-input');
+const priorityInput = document.querySelector('#priority-input');
+const checkbox = document.querySelector('#checkbox');
+const heading = document.querySelector('h1');
+
+const onInput = (e) => {
+	heading.innerText = e.target.value;
+};
+
+const onChecked = (e) => {
+	heading.innerText = e.target.checked ? 'Checked' : 'Unchecked';
+};
+
+const onFocus = (e) => {
+	e.target.style.outline = '1px solid green';
+};
+
+const onBlur = (e) => {
+	e.target.style.outline = 'none';
+};
+
+itemInput.addEventListener('input', onInput);
+priorityInput.addEventListener('change', onInput);
+checkbox.addEventListener('input', onChecked);
+itemInput.addEventListener('focus', onFocus);
+itemInput.addEventListener('blur', onBlur);

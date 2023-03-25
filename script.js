@@ -164,29 +164,52 @@
 
 // ========= 06 Form Submission & FormData Object  =========== //
 
-const form = document.querySelector('#item-form');
+// const form = document.querySelector('#item-form');
 
-const onSubmit = (e) => {
-	e.preventDefault();
-	const item = document.querySelector('#item-input').value;
-	const priorityInput = document.querySelector('#priority-input').value;
-	if (item === '' || priorityInput === '0') {
-		alert('Please fill the input');
-		return;
-	}
-	console.log(item, priorityInput);
-};
+// const onSubmit = (e) => {
+// 	e.preventDefault();
+// 	const item = document.querySelector('#item-input').value;
+// 	const priorityInput = document.querySelector('#priority-input').value;
+// 	if (item === '' || priorityInput === '0') {
+// 		alert('Please fill the input');
+// 		return;
+// 	}
+// 	console.log(item, priorityInput);
+// };
 
-const onSubmitTwo = (e) => {
-	e.preventDefault();
-	const formData = new FormData(form);
-	const item = formData.get('item');
-	const priority = formData.get('priority');
+// const onSubmitTwo = (e) => {
+// 	e.preventDefault();
+// 	const formData = new FormData(form);
+// 	const item = formData.get('item');
+// 	const priority = formData.get('priority');
 
-	const entries = formData.entries();
-	for (const entry of entries) {
-		console.log(entry[1]);
-	}
-};
+// 	const entries = formData.entries();
+// 	for (const entry of entries) {
+// 		console.log(entry[1]);
+// 	}
+// };
 
-form.addEventListener('submit', onSubmitTwo);
+// form.addEventListener('submit', onSubmitTwo);
+
+// ================== 07 Event Bubbling  =================== //
+
+const button = document.querySelector('form button');
+const div = document.querySelector('form div:nth-child(2)');
+const form = document.querySelector('form');
+
+button.addEventListener('click', (e) => {
+	e.stopPropagation();
+	alert('The button was clicked');
+});
+
+div.addEventListener('click', () => {
+	alert('Div was clicked');
+});
+
+form.addEventListener('click', () => {
+	alert('Form was clicked');
+});
+
+document.body.addEventListener('click', () => {
+	alert('Body was clicked');
+});
